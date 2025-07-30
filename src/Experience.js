@@ -7,6 +7,7 @@ import {
   Text,
   useGLTF,
 } from '@react-three/drei'
+import { Suspense } from 'react'
 
 export default function Experience() {
   const computer = useGLTF(
@@ -15,7 +16,9 @@ export default function Experience() {
 
   return (
     <>
-      <Environment preset="city" />
+        <Suspense fallback={null}>
+  <Environment preset="city" />
+</Suspense>
       <color attach="background" args={['#0d5cb6']} />
 
       <PresentationControls
