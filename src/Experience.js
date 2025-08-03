@@ -3,6 +3,7 @@ import {
   Environment,
   Float,
   Html,
+  OrbitControls,
   PresentationControls,
   Text,
   useGLTF,
@@ -37,6 +38,11 @@ const textPosition = isMobile ? [0.5, 2.0, 0.9] : [2, 0.75, 0.75]
         <Environment preset="city" />
       </Suspense>
       <color attach="background" args={['#0d5cb6']} />
+<ContactShadows position-y={-1.4} scale={5} blur={2.4} />
+
+<OrbitControls enableZoom={true} enableRotate={false} />
+
+
 
  <PresentationControls
   global
@@ -70,27 +76,6 @@ const textPosition = isMobile ? [0.5, 2.0, 0.9] : [2, 0.75, 0.75]
             >
               <iframe src="https://mypersonalportfolio02.netlify.app/" />
             </Html>
-            {/* <Html
-              transform
-              wrapperClass="htmlScreen"
-              distanceFactor={iframeDistance}
-              position={[0, 1.56, -1.4]}
-              rotation-x={-0.256}
-              style={{
-                width: `${iframeWidth}px`,
-                height: `${iframeHeight}px`,
-              }}
-            >
-              <iframe
-                src="https://mypersonalportfolio02.netlify.app/"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  borderRadius: '8px',
-                }}
-              />
-            </Html> */}
       </primitive>
 
       <Text
@@ -108,7 +93,6 @@ const textPosition = isMobile ? [0.5, 2.0, 0.9] : [2, 0.75, 0.75]
 </PresentationControls>
 
 
-      <ContactShadows position-y={-1.4} scale={5} blur={2.4} />
     </>
   )
 }
